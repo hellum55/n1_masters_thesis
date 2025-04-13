@@ -8,7 +8,7 @@ def plot_training_curves(history):
     val_loss = np.array(history['eval_loss'])
 
     accuracy = np.array(history['accuracy'])
-    val_accuracy = np.array(history['eval_accuaracy'])
+    val_accuracy = np.array(history['eval_accuracy'])
 
     epochs = range(len(history['loss']))
 
