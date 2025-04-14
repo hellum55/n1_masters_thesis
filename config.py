@@ -6,13 +6,13 @@ class CFG:
     NUM_DEVICES = torch.cuda.device_count()
     NUM_WORKERS = os.cpu_count()
     NUM_CLASSES = 34
-    EPOCHS = 30
+    EPOCHS = 60
     BATCH_SIZE = (
         32 if torch.cuda.device_count() < 2 
         else (32 * torch.cuda.device_count())
     )
     TEST_SIZE = 0.1
-    LR = 0.001
+    LR = 0.0005
     APPLY_SHUFFLE = True
     SEED = 768
     HEIGHT = 224
