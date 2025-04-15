@@ -32,7 +32,7 @@ def get_autoaugment_transforms():
     train_transforms = T.Compose([
         T.Resize((CFG.HEIGHT, CFG.WIDTH)),
         AutoAugment(policy=AutoAugmentPolicy.IMAGENET),
-        CannyEdgeTransform(p=0.6),  # ✅ Inject Canny edge augmentation
+        CannyEdgeTransform(p=0.4),  # ✅ Inject Canny edge augmentation
         T.ToTensor(),
         T.Normalize(mean=[0.485, 0.456, 0.406],
                     std=[0.229, 0.224, 0.225]),
