@@ -18,11 +18,11 @@ class ImageDataset(Dataset):
         row = self.df.iloc[idx]
         image = Image.open(row["file_name"]).convert("RGB")
         label = torch.tensor(row["label_idx"]).long()
-
+        image_path = row["file_name"]
         if self.transform:
             image = self.transform(image)
 
-        return image, label
+        return image, label, image_path
 
 
 def load_dataset(csv_path: str, image_dir: str) -> pd.DataFrame:

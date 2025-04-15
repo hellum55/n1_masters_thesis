@@ -23,7 +23,7 @@ def execute_epoch(
     model.train()
     train_loss, top1_acc, top5_acc = 0.0, 0.0, 0.0
 
-    for X, y in tqdm(dataloader):
+    for X, y, _ in tqdm(dataloader):
         X, y = X.to(device), y.to(device)
 
         # Forward pass
@@ -70,7 +70,7 @@ def evaluate(
     eval_loss, top1_acc, top5_acc = 0.0, 0.0, 0.0
 
     with torch.inference_mode():
-        for X, y in dataloader:
+        for X, y, _ in dataloader:
             X, y = X.to(device), y.to(device)
 
             y_pred = model(X)
