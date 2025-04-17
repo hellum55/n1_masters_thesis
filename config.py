@@ -5,11 +5,11 @@ class CFG:
     DEVICE = 'cuda' if torch.cuda.is_available() else 'cpu'
     NUM_DEVICES = torch.cuda.device_count()
     NUM_WORKERS = os.cpu_count()
-    NUM_CLASSES = 34
+    NUM_CLASSES = 29
     EPOCHS = 10
     BATCH_SIZE = (
-        32 if torch.cuda.device_count() < 2 
-        else (32 * torch.cuda.device_count())
+        64 if torch.cuda.device_count() < 2 
+        else (64 * torch.cuda.device_count())
     )
     TEST_SIZE = 0.1
     LR = 0.0009

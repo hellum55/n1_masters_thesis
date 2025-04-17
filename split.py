@@ -22,7 +22,8 @@ def get_dataloaders(df, train_transforms, val_transforms):
         train_dataset,
         batch_size=CFG.BATCH_SIZE,
         shuffle=CFG.APPLY_SHUFFLE,
-        num_workers=CFG.NUM_WORKERS
+        num_workers=CFG.NUM_WORKERS,
+        pin_memory=True
     )
 
     val_loader = DataLoader(
